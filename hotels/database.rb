@@ -22,10 +22,9 @@ class Database
 
   def find_hotel
     hotel_row = @csv.find{|row| row['Hotel'] == @user_request} 
-    puts "Phone Number: #{hotel_row["Phone Number"]}"
-    puts "City: #{hotel_row["City"]}"
-    puts "Number of Singles: #{hotel_row["Number of Singles"]}"
-    puts "Number of Doubles: #{hotel_row["Number of Doubles"]}"
+    hotel_row.each do |header, row|
+      puts "#{header}: #{row}"
+    end
   end
 
 end
