@@ -2,13 +2,14 @@ require "csv"
 
 class Hotel
 
-  def read_file
-    CSV.foreach("hotels.csv") do |row|
-      puts row
+  def print_names
+    CSV.foreach("hotels.csv", headers:true) do |row|
+      puts row["Hotel"]
     end
   end
+
 
 end
 
 hotel = Hotel.new
-hotel.read_file
+hotel.print_names
