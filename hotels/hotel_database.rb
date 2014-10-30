@@ -11,8 +11,8 @@ class HotelDatabase
 
   def read_csv(file)
     CSV.foreach(file, headers:true) do |row|
-      name = row["Hotel"]
-      @hotels[name] = Hotel.new(row)
+      hotel = Hotel.new(row)
+      @hotels[hotel.name] = hotel
     end 
   end
 
