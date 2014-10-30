@@ -12,5 +12,4 @@ class Hotel
   def total_number_of_rooms
     @number_of_singles.to_i + @number_of_doubles.to_i
   end
-
 end
