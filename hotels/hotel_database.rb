@@ -9,17 +9,19 @@ class HotelDatabase
     read_csv(file)
   end
 
+  def query
+    hotel_name = get_user_input
+    hotel = find_hotel(hotel_name) 
+    print(hotel)
+  end
+
+  private
+  
   def read_csv(file)
     CSV.foreach(file, headers:true) do |row|
       hotel = Hotel.new(row)
       @hotels[hotel.name] = hotel
     end 
-  end
-
-  def query
-    hotel_name = get_user_input
-    hotel = find_hotel(hotel_name) 
-    print(hotel)
   end
 
   def get_user_input

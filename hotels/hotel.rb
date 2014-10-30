@@ -12,6 +12,8 @@ class Hotel
     @number_of_singles + @number_of_doubles
   end
 
+  private
+
   def decorate_info(decorator)
     @name = decorator.strip_string("Hotel")
     @phone = decorator.format_phone("Phone Number")
